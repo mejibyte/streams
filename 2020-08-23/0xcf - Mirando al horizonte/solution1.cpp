@@ -1,3 +1,4 @@
+// O(n^2) solution to https://codeo.app/problemas/0xcf-mirando-al-horizonte
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -14,10 +15,10 @@ void solveCase() {
     // Find j that satisfies our conditions.
     int answer = -1;
     for (int j = i + 1; j < n; ++j) {
-      // Test if j satisfies the 3 conditions.
+      // Test if this j satisfies the 3 conditions.
       //   * Condition #1 (i < j): Automatically satisfied because we explicitly
-      //     set i + 1 <= j
-      //   * Condition #2 (a[i] < a[j]): We test this in the if statement below.
+      //     set i + 1 <= j;
+      //   * Condition #2 (a[i] < a[j]): We test this in the if statement below;
       //   * Condition #3 (j is the smallest possible): Automatically satisfied
       //     since we visit j's in increasing order (smallest j's first).
       if (a[i] < a[j]) {
