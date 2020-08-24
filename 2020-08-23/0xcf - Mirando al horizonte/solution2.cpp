@@ -11,9 +11,14 @@ void solve() {
   for (int i = 0; i < n; ++i) {
     cin >> a[i];
   }
-  list<int> q;
+  list<int> q; // A stack or a deque would both work just as well in this case.
   vector<int> answer(n);
   for (int i = n - 1; i >= 0; --i) {
+    // At first sight this looks to be O(n^2) because the inner while loop
+    // could take up to O(n). However, using amortized analysis we can prove
+    // that it really is O(n). The main observation is that each element is
+    // pushed at most once and popped at most once from the list, so after the
+    // outer loop exits there have been at most O(2n) operations.
     while (q.size() > 0 and a[i] >= q.front()) {
       q.pop_front();
     }
