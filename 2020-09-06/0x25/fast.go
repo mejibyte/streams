@@ -1,3 +1,4 @@
+// Solution to https://codeo.app/problemas/0x25-suma-de-un-subarreglo
 package main
 
 import (
