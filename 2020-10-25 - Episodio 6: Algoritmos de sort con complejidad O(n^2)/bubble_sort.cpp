@@ -10,9 +10,11 @@ int main() {
     cin >> array[i];
   }
 
-  for (int next = 0; next < n; next++) {
-    for (int k = next; k-1 >= 0 and array[k-1] > array[k]; k--) {
-      swap(array[k-1], array[k]);
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j+1 < n; j++) {
+      if (array[j] > array[j+1]) {
+        swap(array[j], array[j+1]);
+      }
     }
   }
 

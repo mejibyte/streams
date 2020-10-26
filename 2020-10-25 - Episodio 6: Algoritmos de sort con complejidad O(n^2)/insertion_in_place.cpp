@@ -10,16 +10,9 @@ int main() {
     cin >> array[i];
   }
 
-  for (int i = 0; i < n; i++) { // n veces...
-    bool did_something = false;
-    for (int j = 0; j+1 < n; j++) {
-      if (array[j] > array[j+1]) {
-        swap(array[j], array[j+1]);
-        did_something = true;
-      }
-    }
-    if (!did_something) {
-      break;
+  for (int next = 0; next < n; next++) {
+    for (int k = next; k-1 >= 0 and array[k-1] > array[k]; k--) {
+      swap(array[k-1], array[k]);
     }
   }
 
